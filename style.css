@@ -1,0 +1,281 @@
+@font-face {
+  font-family: "Myriad";
+  src: url("./fonts/MyriadPro-Light.ttf") format("truetype");
+  font-size: 17px;
+}
+
+@font-face {
+  font-family: "MyriadBold";
+  font-size: 17px;
+  font-weight: bold;
+  src: url("./fonts/MyriadPro-Regular.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 17px;
+  font-family: "Myriad", Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0;
+  margin-bottom: 15px;
+
+  border: 1px solid #f08517;
+}
+
+.card--details {
+  margin-bottom: 0;
+}
+
+.card--details-grid {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.card--details-text {
+  margin-bottom: 20px;
+}
+
+.card--details .card__title {
+  margin: 25px auto 15px;
+}
+
+.card--details .details-btn {
+  cursor: auto;
+}
+.card__image {
+  margin: 25px 0;
+}
+
+.card__content {
+  flex-grow: 1;
+  padding: 0 10px;
+}
+
+.card__title {
+  font-size: 17px;
+  line-height: 22px;
+  font-family: "MyriadBold", Arial, Helvetica, sans-serif;
+  color: #f08517;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.details-btn-container {
+  width: 100%;
+  border-bottom: 1px solid #f08617;
+}
+
+.details-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 15px 50px;
+
+  font-size: 17px;
+  line-height: 22px;
+  font-family: "MyriadBold", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f08517;
+
+  cursor: pointer;
+}
+
+.details-btn--date {
+  background-color: #f08517;
+  color: #fff;
+
+  border-top: 1px solid #fff;
+  cursor: pointer;
+}
+
+.details-btn--date > p {
+  position: relative;
+}
+
+.details-btn--date > p::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 11px;
+  background-image: url("./assets/triangle.svg");
+  background-size: cover;
+  top: 0;
+  transform: translateY(50%);
+  left: -15px;
+}
+
+.description-list {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.description-list__item {
+  position: relative;
+}
+
+.description-list__item::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  transform: translateY(50%);
+  left: -20px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #f08517;
+}
+
+.requirements {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.requirements__img {
+  display: block;
+  margin-right: 30px;
+}
+
+.table {
+  margin: 27px 0 17px;
+}
+
+.table__row {
+  display: flex;
+  flex-direction: column;
+  vertical-align: top;
+  margin-bottom: 7px;
+}
+
+.table__col {
+  line-height: 20px;
+}
+
+.table__col--right {
+  font-size: 17px;
+  font-family: "MyriadBold", Arial, Helvetica, sans-serif;
+  color: #f08517;
+}
+
+@media only screen and (min-width: 767px) {
+  .card {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    padding: 13px 11px;
+  }
+
+  .card--details-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+  }
+
+  .card--details .details-btn--date {
+    cursor: pointer;
+  }
+
+  .card--details-grid .card__title {
+    margin: 0 0 15px;
+  }
+
+  .card__image {
+    margin: 0;
+    order: 1;
+  }
+
+  .card__content {
+    padding-left: 13px;
+  }
+
+  .card__title {
+    margin-top: 12px;
+    max-width: 600px;
+    text-align: left;
+  }
+
+  .details-btn-container {
+    width: auto;
+    margin-top: -14px;
+    margin-right: -12px;
+  }
+
+  .details-btn {
+    width: auto;
+    padding: 15px 20px;
+    border-left: 1px solid #f08617;
+  }
+
+  .table {
+    padding: 0;
+  }
+
+  .table__row {
+    display: table-row;
+  }
+
+  .table__col--left {
+    padding-right: 20px;
+  }
+
+  .table__col--requirements {
+    display: flex;
+  }
+
+  .requirements {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .card__title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .details-btn {
+    padding: 15px 50px;
+  }
+}
+
+.quick-pulse {
+  animation: quick-pulse 0.1s alternate;
+}
+
+@keyframes quick-pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
